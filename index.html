@@ -3,9 +3,34 @@
     <head>
         <title>Gestion d'utilisateurs</title>
         <meta charset="utf-8"/>
-        <!--Commentaire-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
+        <h1>Ajouter un utilisateur</h1>
+        <form method="post" action="https://loisirs-web-backend.cleverapps.io/users">
+            <label for="name">Nom</label>
+            <input type="text" name="name" id="name" required/>
+            </br>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" required/>
+            <input type="submit" value="Ajouter"/>
+        </form>
 
+        <h1>Liste Utilisateurs</h1>
+        <button id="rafraichir" onClick="rafraichir()">Rafraichir</button>
+        </br>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nom</th>
+                    <th>mot de passe</th>
+                </tr>
+            </thead>
+            <tbody id="tableau">
+            </tbody>
+        </table>
+        <script>rafraichir()</script>
     </body>
 </html>
