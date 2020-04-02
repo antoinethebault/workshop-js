@@ -58,17 +58,17 @@ robert.getNomComplet = function(){return robert.nom+" "+robert.prenom+" "+robert
 afficherPersonne(robert);
 
 //héritage via une fonction constructeur
-class Client{
+class Client extends Personne{
     constructor(nom, prenom, pseudo, numeroClient){
-        this.nom = nom;
-        this.prenom = prenom;
-        this.pseudo = pseudo;
+        super(nom, prenom, pseudo);
         this.numeroClient = numeroClient;
     }
     getInfos = function(){
-        return this.numeroClient+" "+this.nom+" "+this.prenom
+        return this.numeroClient+" "+this.nom+" "+this.prenom;
     }
 }
 
 var steve = new Client ("LUCAS", "Steve", "steve44", "A01");
 afficherPersonne(steve);
+console.log("-> Numéro client de steve : "+steve.numeroClient);
+console.log("-> Client steve : "+steve.getInfos());
